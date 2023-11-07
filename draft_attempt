@@ -1,0 +1,26 @@
+# make integral calculator where user asks input
+
+import numpy as np
+from scipy.integrate import quad
+
+response = input("Indefinite or definite integral? (Enter 'definite or indefinite'): ").lower()
+
+if response == "definite":
+    a = float(input("What's the lower bound?"))
+    b = float(input("What's the upper bound?"))
+    function = input("Enter your function: ")
+    def f(x):
+        return eval(function) # tells me to evaulate and summarize your answer
+    answer, _ = quad(f, a, b)
+    print(f"Your answer is {answer}")
+
+
+elif response == "indefinite":
+    function = input("Enter your function: ")
+    def f(x):
+        return eval(function)
+    answer, _ = quad(f, 0, 1) # the 0 & 1 is used as a standard range for integral
+    print(f"Your answer is is {answer}")
+
+else:
+    input("Input Unrecognizable. Select 'definite' or 'indefinite': ")
