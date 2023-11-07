@@ -1,0 +1,24 @@
+# integral calculator attempt - success with gpt.
+
+# calculate e^3 * sine^2(6.9x)
+
+# from an integration from 0 to 1
+
+import numpy as np
+from scipy.integrate import quad
+
+a = -5  # Lower bound
+b = 0  # Upper bound
+
+def f(x):
+    return np.exp(3) * np.sin(6.9 * x)**2 
+
+# my function to integrate
+
+answer, _ = quad(f, a, b)
+
+print(answer)
+
+# '_' is to remove the error estimation of my answer.
+
+# we don't need, just the fuckn answer lol.
